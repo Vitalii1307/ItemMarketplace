@@ -1,0 +1,78 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using MarketplaceClientSide.ViewModels
+@model IndexViewModel
+
+
+<h1>Auctions</h1>
+
+<table class="table">
+    <form method="get">
+        <label>Seller: </label><span></span>
+        <input name="name" value="@Model.FilterViewModel.SelectedName" />
+        <span></span><lavel>Status:</lavel><span> </span>
+        <select name="status" asp-items="Model.FilterViewModel.StatusList"></select>
+        <span></span>
+        <input type="submit" class="btn btn-primary" value="Filter" />
+    </form>
+    <thead>
+        <tr>
+            <th>ItemId</th>
+            <th>Item's name</th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.CreatedDtSort)"
+                   asp-route-name="@(Model.FilterViewModel.SelectedName)"
+                   asp-route-status="@(Model.FilterViewModel.SelectedStatus)">CreatedDt</a>
+            </th>
+            <th>FinishedDt</th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@(Model.SortViewModel.PriceSort)"
+                   asp-route-name="@(Model.FilterViewModel.SelectedName)"
+                   asp-route-status="@(Model.FilterViewModel.SelectedStatus)">Price</a>
+            </th>
+            <th>Status </th>
+            <th>Seller</th>
+            <th>Buyer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var auctions in Model.Auctions)
+        {
+            <tr>
+                <td>@auctions.ItemId</td>
+                <td>@auctions.Item.Name</td>
+                <td>@auctions.CreatedDt.ToString("dd-MM-yyyy")</td>
+                <td>@auctions.FinishedDt.ToString("dd-MM-yyyy")</td>
+                <td>@auctions.Price</td>
+                <td>@auctions.Status</td>
+                <td>@auctions.Seller</td>
+                <td>@auctions.Buyer</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+           asp-route-name="@(Model.FilterViewModel.SelectedName)"
+           asp-route-status="@(Model.FilterViewModel.SelectedStatus)"
+           asp-route-sortorder="@(Model.SortViewModel.Current)"
+           class="glyphicon glyphicon-chevron-left">
+            Previous
+        </a>
+    }
+    &nbsp;&nbsp;&nbsp;
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="Index"
+           asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+           asp-route-name="@(Model.FilterViewModel.SelectedName)"
+           asp-route-status="@(Model.FilterViewModel.SelectedStatus)"
+           asp-route-sortorder="@(Model.SortViewModel.Current)"
+           class="glyphicon glyphicon-chevron-right">
+            Next
+        </a>
+    }
+</p>

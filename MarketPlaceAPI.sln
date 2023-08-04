@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketPlaceAPI", "MarketPlaceAPI\MarketPlaceAPI.csproj", "{11D37E32-A521-4715-ABFE-265BF2AE07D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketplaceClientSide", "MarketplaceClientSide\MarketplaceClientSide.csproj", "{29049FB6-B516-40B0-ACA4-C820B00DC8B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11D37E32-A521-4715-ABFE-265BF2AE07D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D37E32-A521-4715-ABFE-265BF2AE07D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D37E32-A521-4715-ABFE-265BF2AE07D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D37E32-A521-4715-ABFE-265BF2AE07D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29049FB6-B516-40B0-ACA4-C820B00DC8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29049FB6-B516-40B0-ACA4-C820B00DC8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29049FB6-B516-40B0-ACA4-C820B00DC8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29049FB6-B516-40B0-ACA4-C820B00DC8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AFF30B4-CC2C-40E6-999F-FB590BAEBCA4}
+	EndGlobalSection
+EndGlobal
